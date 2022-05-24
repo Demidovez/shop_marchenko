@@ -1,0 +1,21 @@
+.container {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+.container > div {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
