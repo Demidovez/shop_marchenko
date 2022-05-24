@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 530px;
+    overflow: hidden;
+    background: url("../public/assets/images/home_banner.jpeg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.content h2 {
+    font-size: 100px;
+    color: white;
+    line-height: 1.55;
+}
+
+.link {
+    padding: 20px;
+    border: 1px solid white;
+    color: white;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+}
+
+
+.banner img {
+    background-size: cover;
+}
