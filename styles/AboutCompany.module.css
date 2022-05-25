@@ -1,0 +1,27 @@
+.container {
+  margin: 80px auto 80px;
+  max-width: 1180px;
+  display: grid;
+  grid-template-columns: 10fr 9fr;
+}
+
+.about h3 {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.about p {
+}
+.about a {
+  padding: 20px;
+  margin-top: 50px;
+  border: 1px solid black;
+  color: black;
+  text-transform: uppercase;
+  display: inline-block;
+  width: 60%;
+  text-align: center;
+}
+
+.image {
+}
