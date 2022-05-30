@@ -31,3 +31,9 @@ export interface IPayment {
   id: number;
   iconName: string;
 }
+
+export interface IMenuItem {
+  title: string;
+  link?: string;
+  children?: IMenuItem[];
+}
