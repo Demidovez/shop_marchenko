@@ -29,14 +29,14 @@ const Menu = ({ menu }: IProps) => {
             )}
           </a>
           {item.children && (
-            <div className={styles.children_wrapper}>
+            <div
+              className={styles.children_wrapper}
+              onMouseLeave={onHoverCategory.bind(this, "")}
+            >
               <div className={styles.children}>
                 <AiFillCaretUp size="35px" className={styles.arrow_up} />
                 {item.children.map((child) => (
-                  <p
-                    onMouseEnter={onHoverCategory.bind(this, child.title)}
-                    onMouseLeave={onHoverCategory.bind(this, "")}
-                  >
+                  <p onMouseEnter={onHoverCategory.bind(this, child.title)}>
                     {child.link ? (
                       <a href={child.link}>{child.title}</a>
                     ) : (
@@ -46,6 +46,11 @@ const Menu = ({ menu }: IProps) => {
                       <AiFillCaretRight
                         size="10px"
                         className={styles.arrow_right}
+                        style={{
+                          transform: `rotate(${
+                            hoverCategory === child.title ? 180 : 0
+                          }deg)`,
+                        }}
                       />
                     )}
                   </p>
@@ -65,7 +70,7 @@ const Menu = ({ menu }: IProps) => {
                       <div className={styles.left_side}></div>
                       <div className={styles.sub_children}>
                         {child.children.map((child) => (
-                          <a href="">{child.title}</a>
+                          <a href={child.link}>{child.title}</a>
                         ))}
                       </div>
                     </div>
