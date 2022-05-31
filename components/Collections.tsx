@@ -96,7 +96,7 @@ const Collections = () => {
               <Image
                 src={`/assets/images/${collection.image}`}
                 layout="fill"
-                objectFit="cover"
+                objectFit="none"
               />
             </div>
           ))}

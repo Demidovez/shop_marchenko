@@ -18,32 +18,34 @@ const Footer = () => {
       {
         id: 2,
         link: "https://watsup.com",
-        iconName: "watsup",
+        iconName: "whatsapp",
       },
       {
         id: 3,
         link: "https://telegram.com",
-        iconName: "telegram",
+        iconName: "telegram_foot",
       },
       {
         id: 4,
         link: "https://vkontakte.com",
-        iconName: "vkontakte",
+        iconName: "vk",
       },
     ];
 
     const payments: IPayment[] = [
       {
         id: 1,
-        iconName: "visa",
+        iconName: "visa_logo",
       },
       {
         id: 2,
-        iconName: "mastercard",
+        iconName: "mastercard_logo",
+        width: 50,
+        height: 30,
       },
       {
         id: 3,
-        iconName: "mir",
+        iconName: "mir_logo",
       },
     ];
 
@@ -60,52 +62,58 @@ const Footer = () => {
           </div>
           <div>
             <h5>Забота о клиентах</h5>
-            <p>
-              <a href="">Условия доставки</a>
-            </p>
-            <p>
-              <a href="">Оплата</a>
-            </p>
-            <p>
-              <a href="">Возврат и обмен</a>
-            </p>
-            <p>
-              <a href="">Отслеживание заказа</a>
-            </p>
-            <p>
-              <a href="">Политика конфиденциальности</a>
-            </p>
-            <p>
-              <a href="">Публичная оферта</a>
-            </p>
+            <ul>
+              <li>
+                <a href="">Условия доставки</a>
+              </li>
+              <li>
+                <a href="">Оплата</a>
+              </li>
+              <li>
+                <a href="">Возврат и обмен</a>
+              </li>
+              <li>
+                <a href="">Отслеживание заказа</a>
+              </li>
+              <li>
+                <a href="">Политика конфиденциальности</a>
+              </li>
+              <li>
+                <a href="">Публичная оферта</a>
+              </li>
+            </ul>
           </div>
           <div>
             <h5>Контакты</h5>
-            <p>Санкт-Петербург, ул. Садовая 32</p>
-            <p>
-              <a href="tel:111111111">1 (111) 111 - 11 - 11</a>
-            </p>
-            <p>
-              <a href="email:shop_mail@mail.ru">shop_mail@mail.ru</a>
-            </p>
-            <p>
-              <a href="https://t.me/" target="_blank">
-                Telegram
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://api.whatsapp.com/send/?phone=1111111&text&app_absent=0"
-                target="_blank"
-              >
-                WhatsApp
-              </a>
-            </p>
-            <p>
-              <a href="https://vk.com/" target="_blank">
-                Vkontakte
-              </a>
-            </p>
+            <ul>
+              <li>
+                <p>Санкт-Петербург, ул. Садовая 32</p>
+              </li>
+              <li>
+                <a href="tel:111111111">1 (111) 111 - 11 - 11</a>
+              </li>
+              <li>
+                <a href="email:shop_mail@mail.ru">shop_mail@mail.ru</a>
+              </li>
+              <li>
+                <a href="https://t.me/" target="_blank">
+                  Telegram
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=1111111&text&app_absent=0"
+                  target="_blank"
+                >
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/" target="_blank">
+                  Vkontakte
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
         <div className={styles.footer}>
@@ -116,9 +124,9 @@ const Footer = () => {
             {socials.map((social) => (
               <div key={social.id}>
                 <Image
-                  src="/assets/images/instagram.svg"
-                  width="50px"
-                  height="50px"
+                  src={`/assets/images/${social.iconName}.svg`}
+                  width="27px"
+                  height="27px"
                 />
               </div>
             ))}
@@ -127,9 +135,9 @@ const Footer = () => {
             {payments.map((payment) => (
               <div key={payment.id}>
                 <Image
-                  src="/assets/images/Visa_Inc_logo.svg"
-                  width="50px"
-                  height="50px"
+                  src={`/assets/images/${payment.iconName}.svg`}
+                  width={`${payment.width || 60}px`}
+                  height={`${payment.height || 35}px`}
                 />
               </div>
             ))}

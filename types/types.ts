@@ -31,6 +31,8 @@ export interface ISocial {
 export interface IPayment {
   id: number;
   iconName: string;
+  width?: number;
+  height?: number;
 }
 
 export interface IMenuItem {
