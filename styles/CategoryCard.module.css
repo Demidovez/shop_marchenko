@@ -1,7 +1,40 @@
 .container {
-    text-align: left;
+  text-align: left;
+  cursor: pointer;
 }
 
 .image {
-    border: 1px solid black;
+  border: 1px solid black;
+  max-height: 320px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.container h5 {
+  font-size: 18px;
+  font-family: "Tenor sans", Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  position: relative;
+}
+
+.container:hover .right {
+  opacity: 1;
+  right: 0;
+}
+
+.right {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s;
 }

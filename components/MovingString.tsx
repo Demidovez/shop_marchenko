@@ -20,7 +20,7 @@ const MovingString = () => {
 
   return (
     <div className={styles.container}>
-      <div>{textLines.join(" / ")}</div>
+      <div>{textLines.join("\xa0\xa0 / \xa0\xa0")}</div>
     </div>
   );
 };

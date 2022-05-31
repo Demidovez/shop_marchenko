@@ -53,7 +53,7 @@ const CompleteYourLook = () => {
       <h3>Дополни свой образ</h3>
       <div className={styles.products}>
         {products.map((product) => (
-          <ProductCard product={product} />
+          <ProductCard product={product} key={product.id} />
         ))}
       </div>
       <a href="">Смотреть хиты одежды</a>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import styles from "../styles/ProductCard.module.css";
 import { IProduct } from "../types/types";
 
@@ -7,6 +8,22 @@ interface IProps {
 }
 
 const ProductCard = ({ product }: IProps) => {
+  const [info, setInfo] = useState<string[]>([]);
+
+  useEffect(() => {
+    let info: string[] = [];
+
+    if (product.material) {
+      info.push(product.material);
+    }
+
+    if (product.seasons) {
+      info.push(product.seasons.join(", "));
+    }
+
+    setInfo(info);
+  }, [product]);
+
   return (
     <div className={styles.container}>
       <div>
@@ -17,17 +34,17 @@ const ProductCard = ({ product }: IProps) => {
         />
       </div>
       <h5>{product.title}</h5>
-      <div>
+      <div className={styles.price}>
         <span>
-          {product.price_new} {product.price_symbol}
+          {product.price_new.toLocaleString()} {product.price_symbol}
         </span>
-        <span>
-          {product.price_old} {product.price_symbol}
-        </span>
+        {product.price_old && (
+          <span>
+            {product.price_old.toLocaleString()} {product.price_symbol}
+          </span>
+        )}
       </div>
-      <p>
-        {product.material} / {product.seasons?.join(", ")}
-      </p>
+      <p className={styles.info}>{info.join(" / ")}</p>
     </div>
   );
 };

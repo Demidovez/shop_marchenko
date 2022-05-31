@@ -10,23 +10,23 @@ const PopularCategories = () => {
     const categories: ICategory[] = [
       {
         id: 1,
-        title: "Мягкие лоферы в черном оттенке",
-        images: "IMG_6775.JPG",
+        title: "Одежда",
+        image: "IMG_6775.JPG",
       },
       {
         id: 2,
-        title: "Мягкие лоферы в черном оттенке",
-        images: "IMG_6775.JPG",
+        title: "Кроссовки и кеды",
+        image: "IMG_6775.JPG",
       },
       {
         id: 3,
-        title: "Мягкие лоферы в черном оттенке",
-        images: "IMG_6775.JPG",
+        title: "Лоферы и туфли",
+        image: "IMG_6775.JPG",
       },
       {
         id: 4,
-        title: "Мягкие лоферы в черном оттенке",
-        images: "IMG_6775.JPG",
+        title: "Боссоножки и сандалии",
+        image: "IMG_6775.JPG",
       },
     ];
 
@@ -38,7 +38,7 @@ const PopularCategories = () => {
       <h3>Популярные категории</h3>
       <div className={styles.categories}>
         {categories.map((category) => (
-          <CategoryCard category={category} />
+          <CategoryCard category={category} key={category.id} />
         ))}
       </div>
     </div>

@@ -114,7 +114,7 @@ const Footer = () => {
           </div>
           <div className={styles.socials}>
             {socials.map((social) => (
-              <div>
+              <div key={social.id}>
                 <Image
                   src="/assets/images/instagram.svg"
                   width="50px"
@@ -125,7 +125,7 @@ const Footer = () => {
           </div>
           <div className={styles.payments}>
             {payments.map((payment) => (
-              <div>
+              <div key={payment.id}>
                 <Image
                   src="/assets/images/Visa_Inc_logo.svg"
                   width="50px"

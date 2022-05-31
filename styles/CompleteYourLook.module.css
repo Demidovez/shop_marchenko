@@ -1,24 +1,35 @@
 .container {
-    max-width: 1180px;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .container h3 {
-    text-transform: uppercase;
-    margin: 70px 0 30px 0;
+  text-transform: uppercase;
+  margin: 70px 0 30px 0;
+  font-size: 32px;
+  font-family: "Tenor sans", Arial, sans-serif;
+  line-height: 1.55;
+  font-weight: 400;
+  letter-spacing: 1.5px;
 }
 
 .container a {
-    padding: 20px;
-    margin-top: 50px;
-    border: 1px solid black;
-    color: black;
-    text-transform: uppercase;
-    display: inline-block;
+  padding: 17px 60px;
+  margin-top: 45px;
+  border: 1px solid black;
+  color: black;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Tenor sans", Arial, sans-serif;
+  line-height: 1.55;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .products {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 46px;
 }

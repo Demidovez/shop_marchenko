@@ -1,21 +1,28 @@
 .container {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    height: 75px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow-x: hidden;
-  }
-  
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+  font-family: "Tenor sans", Arial, sans-serif;
+  font-weight: 400;
+}
+
 .container > div {
-    position: absolute;
-    white-space: nowrap;
-    will-change: transform;
-    animation: marquee 32s linear infinite;
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 50s linear infinite;
+  text-transform: uppercase;
 }
 
 @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }

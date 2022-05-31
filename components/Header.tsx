@@ -32,7 +32,7 @@ const Header = () => {
               link: "/sale",
             },
             {
-              title: "Новая коллекция",
+              title: "New collection",
               link: "/new",
             },
             {

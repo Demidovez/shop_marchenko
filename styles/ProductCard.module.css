@@ -1,3 +1,47 @@
 .container {
-    text-align: left;
+  text-align: left;
+}
+
+.container h5 {
+  font-size: 13px;
+  line-height: 2;
+  font-weight: 500;
+  padding-top: 0px;
+  margin-top: 17px;
+  margin-bottom: 10px;
+  font-family: "Tenor sans";
+  text-transform: uppercase;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.35;
+  font-family: "Tenor sans", Arial, sans-serif;
+  color: #333333;
+}
+
+.price span + span {
+  margin-left: 5px;
+  color: #b0aeae;
+  position: relative;
+}
+
+.price span + span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -1px;
+  left: -1px;
+  border-top: 1px solid;
+  width: 100%;
+}
+
+.info {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+  font-family: "Tenor sans", Arial, sans-serif;
+  color: #828282;
+  margin-top: 10px;
 }
