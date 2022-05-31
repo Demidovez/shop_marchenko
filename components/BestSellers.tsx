@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/BestSellers.module.css";
-import { IProduct } from "../types/types";
+import { EProductOption, IProduct } from "../types/types";
 import ProductCard from "./ProductCard";
 
 const BestSellers = () => {
@@ -11,15 +11,18 @@ const BestSellers = () => {
       {
         id: 1,
         title: "Мягкие лоферы в черном оттенке",
+        link: "/product_1",
         price_new: 4500,
         price_symbol: "р.",
         material: "пресованная кожа",
         seasons: ["весна", "лето"],
-        images: ["IMG_6775.JPG", "IMG_4802_Facetune_22.jpg"],
+        images: ["IMG_6775.jpeg", "IMG_4802_Facetune_22.jpeg"],
+        options: [EProductOption.BEST],
       },
       {
         id: 2,
         title: "Женственные плетёные босоножки",
+        link: "/product_1",
         price_new: 4900,
         price_symbol: "р.",
         material: "экокожа",
@@ -29,14 +32,17 @@ const BestSellers = () => {
       {
         id: 3,
         title: "Белые сандалии с закрытым носом",
+        link: "/product_1",
         price_new: 3800,
         price_old: 4500,
         price_symbol: "р.",
-        images: ["IMG_7580.jpeg", "IMG_7572.jpeg.jpeg"],
+        images: ["IMG_7580.jpeg", "IMG_7572.jpeg"],
+        options: [EProductOption.BEST, EProductOption.FAVORITE],
       },
       {
         id: 4,
         title: "Сандалии в бежевом оттенке на липучках",
+        link: "/product_1",
         price_new: 3900,
         price_symbol: "р.",
         material: "экокожа",
@@ -56,7 +62,9 @@ const BestSellers = () => {
           <ProductCard product={product} key={product.id} />
         ))}
       </div>
-      <a href="">Смотреть хиты обуви</a>
+      <a href="" className={styles.link}>
+        Смотреть хиты обуви
+      </a>
     </div>
   );
 };

@@ -1,12 +1,14 @@
 export interface IProduct {
   id: number;
   title: string;
+  link: string;
   price_new: number;
   price_old?: number;
   price_symbol: string;
   material?: string;
   seasons?: string[];
   images: string[];
+  options?: EProductOption[];
 }
 
 export interface ICategory {
@@ -39,4 +41,9 @@ export interface IMenuItem {
   title: string;
   link?: string;
   children?: IMenuItem[];
+}
+
+export enum EProductOption {
+  BEST,
+  FAVORITE,
 }

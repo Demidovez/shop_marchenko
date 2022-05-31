@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "../styles/ProductCard.module.css";
-import { IProduct } from "../types/types";
+import { EProductOption, IProduct } from "../types/types";
+import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 
 interface IProps {
   product: IProduct;
@@ -9,6 +10,8 @@ interface IProps {
 
 const ProductCard = ({ product }: IProps) => {
   const [info, setInfo] = useState<string[]>([]);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [isBest, setIsBest] = useState(false);
 
   useEffect(() => {
     let info: string[] = [];
@@ -21,19 +24,48 @@ const ProductCard = ({ product }: IProps) => {
       info.push(product.seasons.join(", "));
     }
 
+    product.options?.map((option) => {
+      option === EProductOption.BEST && setIsBest(true);
+      option === EProductOption.FAVORITE && setIsFavorite(true);
+    });
+
     setInfo(info);
   }, [product]);
 
+  const onFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <div className={styles.container}>
-      <div>
-        <Image
-          src="/assets/images/IMG_7580.jpeg"
-          width="260px"
-          height="400px"
-        />
+      <div className={styles.icons}>
+        <div>{isBest && <div className={styles.best}>BEST</div>}</div>
+        <div>
+          <div className={styles.favorite} onClick={onFavorite}>
+            {isFavorite ? (
+              <IoMdHeart size="27px" color="#ed5952" />
+            ) : (
+              <IoMdHeartEmpty size="27px" />
+            )}
+          </div>
+        </div>
       </div>
-      <h5>{product.title}</h5>
+      <div className={styles.images}>
+        {product.images.map((image) => (
+          <div key={image} className={styles.image}>
+            <a href={product.link}>
+              <Image
+                src={`/assets/images/${image}`}
+                layout="fill"
+                objectFit="cover"
+              />
+            </a>
+          </div>
+        ))}
+      </div>
+      <h5>
+        <a href={product.link}>{product.title}</a>
+      </h5>
       <div className={styles.price}>
         <span>
           {product.price_new.toLocaleString()} {product.price_symbol}

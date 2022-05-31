@@ -1,5 +1,6 @@
 .container {
   text-align: left;
+  position: relative;
 }
 
 .container h5 {
@@ -44,4 +45,59 @@
   font-family: "Tenor sans", Arial, sans-serif;
   color: #828282;
   margin-top: 10px;
+}
+
+.images {
+  position: relative;
+  width: 260px;
+  height: 400px;
+}
+
+.image {
+  transition: all 0.3s;
+}
+
+.image:hover {
+  opacity: 0;
+}
+
+.icons {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  padding: 10px;
+}
+
+.best,
+.favorite {
+  width: 45px;
+  height: 45px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.best {
+  background: #ff4a4a;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 12px;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.favorite {
+  cursor: pointer;
+}
+
+.favorite > * {
+  transition: all 0.3s;
+}
+
+.favorite:hover > * {
+  transform: scale(1.1);
 }

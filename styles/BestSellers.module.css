@@ -15,7 +15,7 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.container a {
+.container .link {
   padding: 17px 60px;
   margin-top: 50px;
   border: 1px solid black;
