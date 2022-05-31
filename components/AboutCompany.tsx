@@ -1,15 +1,12 @@
 import styles from "../styles/AboutCompany.module.css";
-import Image from "next/image";
 
 const AboutCompany = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.image}>
-        <Image
-          src="/assets/images/photo_colle.png"
-          width="300px"
-          height="500px"
-        />
+      <div className={styles.video}>
+        <video preload="auto" playsInline autoPlay loop muted>
+          <source src="/assets/video/video.mp4" type="video/mp4" />
+        </video>
       </div>
 
       <div className={styles.about}>
@@ -19,14 +16,12 @@ const AboutCompany = () => {
           мировых тенденций.
         </p>
         <p>
-          {" "}
           Работаем с крупнейшими фабриками напрямую, сохраняя для своих
           покупателей доступные цены.
           <br /> А свою премиум линейку мы изготавливаем на производстве в
           Санкт-Петербурге, используя высококачественные итальянские материалы.
         </p>
         <p>
-          {" "}
           Наш offline магазин располагается в центре Санкт-Петербурга, ждём вас
           на примерку ежедневно!:)
         </p>
