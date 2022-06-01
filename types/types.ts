@@ -14,8 +14,8 @@ export interface IProduct {
 export interface ICategory {
   id: number;
   title: string;
-  link: string;
-  image: string;
+  link?: string;
+  image?: string;
 }
 
 export interface ICollection {
@@ -47,4 +47,16 @@ export interface IMenuItem {
 export enum EProductOption {
   BEST,
   FAVORITE,
+}
+
+export enum EOptionType {
+  SIMPLE_LIST,
+  CHECKBOX_LIST,
+  PRICE,
+}
+
+export interface IFilterOption {
+  title: string;
+  type: EOptionType;
+  children?: string[];
 }

@@ -79,7 +79,10 @@ const Header = () => {
       <div className={styles.content_wrapper}>
         <div className={styles.content}>
           <div className={styles.logo}>
-            <Image src={logo} width={88} height={21} />
+            <a href="/">
+              {" "}
+              <Image src={logo} width={88} height={21} />
+            </a>
           </div>
           <Menu menu={menu} />
           <div className={styles.icons}>
