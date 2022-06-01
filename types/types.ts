@@ -14,6 +14,7 @@ export interface IProduct {
 export interface ICategory {
   id: number;
   title: string;
+  link: string;
   image: string;
 }
 

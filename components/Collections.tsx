@@ -1,12 +1,16 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ICollection } from "../types/types";
 import styles from "../styles/Collections.module.css";
 import { VscArrowRight } from "react-icons/vsc";
+import useVisible from "../hooks/useVisible";
 
 const Collections = () => {
   const [collectionList, setCollectionList] = useState<ICollection[]>([]);
   const [hoverCollection, setHoverCollection] = useState("");
+
+  const titleRef = useRef(null);
+  const isVisibleTitle = useVisible(titleRef);
 
   useEffect(() => {
     const list: ICollection[] = [
@@ -51,7 +55,9 @@ const Collections = () => {
 
   return (
     <div className={styles.container}>
-      <h3>Коллекции</h3>
+      <h3 ref={titleRef} className={`${isVisibleTitle && styles.visible_h3}`}>
+        Коллекции
+      </h3>
       <div className={styles.content}>
         <div className={styles.collections}>
           {collectionList.map((collection) => (
@@ -60,7 +66,7 @@ const Collections = () => {
               onMouseEnter={onHoverCategory.bind(this, collection.title)}
               onMouseLeave={onHoverCategory.bind(this, "")}
             >
-              <a href={collection.title}>
+              <a href={collection.link}>
                 {collection.title}{" "}
                 <div className={styles.right}>
                   <VscArrowRight size="38px" />

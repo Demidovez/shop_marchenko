@@ -15,21 +15,25 @@ const PopularCategories = () => {
       {
         id: 1,
         title: "Одежда",
+        link: "/catalog-clothes",
         image: "IMG_6775.JPG",
       },
       {
         id: 2,
         title: "Кроссовки и кеды",
+        link: "/catalog-sneakers",
         image: "IMG_6775.JPG",
       },
       {
         id: 3,
         title: "Лоферы и туфли",
+        link: "/catalog-loafers",
         image: "IMG_6775.JPG",
       },
       {
         id: 4,
         title: "Боссоножки и сандалии",
+        link: "/catalog-sandals",
         image: "IMG_6775.JPG",
       },
     ];

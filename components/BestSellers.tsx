@@ -26,7 +26,7 @@ const BestSellers = () => {
       {
         id: 2,
         title: "Женственные плетёные босоножки",
-        link: "/product_1",
+        link: "/product_2",
         price_new: 4900,
         price_symbol: "р.",
         material: "экокожа",
@@ -36,7 +36,7 @@ const BestSellers = () => {
       {
         id: 3,
         title: "Белые сандалии с закрытым носом",
-        link: "/product_1",
+        link: "/product_3",
         price_new: 3800,
         price_old: 4500,
         price_symbol: "р.",
@@ -46,7 +46,7 @@ const BestSellers = () => {
       {
         id: 4,
         title: "Сандалии в бежевом оттенке на липучках",
-        link: "/product_1",
+        link: "/product_4",
         price_new: 3900,
         price_symbol: "р.",
         material: "экокожа",
@@ -67,7 +67,7 @@ const BestSellers = () => {
         ))}
       </div>
       <a
-        href=""
+        href="/catalog"
         className={`${styles.link} ${isVisibleLink && styles.visible_link}`}
         ref={linkRef}
       >

@@ -19,6 +19,21 @@
   font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
+  transform: translateX(100px);
+  opacity: 0;
+}
+
+.container h3.visible_h3 {
+  animation: fadein_left 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.about .content {
+  transform: translateX(100px);
+  opacity: 0;
+}
+
+.about .content.visible_content {
+  animation: fadein_left 1.2s 0.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
 }
 
 .about p {
@@ -29,7 +44,7 @@
   margin-bottom: 50px;
 }
 
-.about a {
+.about .link {
   padding: 17px 0;
   border: 1px solid black;
   color: black;
@@ -42,6 +57,17 @@
   line-height: 1.55;
   font-weight: 600;
   letter-spacing: 1px;
+  transform: scale(0.8);
+  transition: all 0.3s;
+}
+
+.link:hover {
+  background-color: black;
+  color: white;
+}
+
+.link.visible_link {
+  animation: fadein_short 0.5s forwards;
 }
 
 .video {
@@ -51,4 +77,24 @@
 .video video {
   width: 100%;
   height: 100%;
+}
+
+@keyframes fadein_short {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadein_left {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }

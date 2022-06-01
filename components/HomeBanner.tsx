@@ -13,7 +13,7 @@ const HomeBanner = () => {
         }}
       >
         <h2>New collection</h2>
-        <a href="" className={styles.link}>
+        <a href="/catalog" className={styles.link}>
           Перейти в каталог
         </a>
       </div>

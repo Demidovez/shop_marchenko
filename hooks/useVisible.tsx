@@ -21,7 +21,7 @@ export default function useVisible(
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 1.0,
+      threshold: 0.3,
     };
 
     const observer = new IntersectionObserver(callbackVisible, options);

@@ -2,6 +2,9 @@
   text-align: left;
   position: relative;
   opacity: 0;
+}
+
+.container.visible_card {
   animation: fadein 0.5s forwards;
 }
 

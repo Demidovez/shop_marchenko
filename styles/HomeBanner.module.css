@@ -42,6 +42,12 @@
   letter-spacing: 1px;
   opacity: 0;
   animation: fade_link 2s 0.3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  transition: all 0.3s;
+}
+
+.link:hover {
+  background-color: white;
+  color: black;
 }
 
 .banner img {

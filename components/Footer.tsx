@@ -64,22 +64,24 @@ const Footer = () => {
             <h5>Забота о клиентах</h5>
             <ul>
               <li>
-                <a href="">Условия доставки</a>
+                <a href="/info/deleviry">Условия доставки</a>
               </li>
               <li>
-                <a href="">Оплата</a>
+                <a href="/info/payment">Оплата</a>
               </li>
               <li>
-                <a href="">Возврат и обмен</a>
+                <a href="/info/recovery">Возврат и обмен</a>
               </li>
               <li>
-                <a href="">Отслеживание заказа</a>
+                <a href="https://www.cdek.ru/ru/tracking" target="_blank">
+                  Отслеживание заказа
+                </a>
               </li>
               <li>
-                <a href="">Политика конфиденциальности</a>
+                <a href="/privacy-policy">Политика конфиденциальности</a>
               </li>
               <li>
-                <a href="">Публичная оферта</a>
+                <a href="/oferta">Публичная оферта</a>
               </li>
             </ul>
           </div>
@@ -123,11 +125,13 @@ const Footer = () => {
           <div className={styles.socials}>
             {socials.map((social) => (
               <div key={social.id}>
-                <Image
-                  src={`/assets/images/${social.iconName}.svg`}
-                  width="27px"
-                  height="27px"
-                />
+                <a href={social.link}>
+                  <Image
+                    src={`/assets/images/${social.iconName}.svg`}
+                    width="27px"
+                    height="27px"
+                  />
+                </a>
               </div>
             ))}
           </div>

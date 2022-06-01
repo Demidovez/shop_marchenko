@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "../styles/ProductCard.module.css";
 import { EProductOption, IProduct } from "../types/types";
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
+import useVisible from "../hooks/useVisible";
 
 interface IProps {
   product: IProduct;
@@ -13,6 +14,9 @@ const ProductCard = ({ product, order = 0 }: IProps) => {
   const [info, setInfo] = useState<string[]>([]);
   const [isFavorite, setIsFavorite] = useState(false);
   const [isBest, setIsBest] = useState(false);
+
+  const cardRef = useRef(null);
+  const isVisibleCard = useVisible(cardRef);
 
   useEffect(() => {
     let info: string[] = [];
@@ -39,7 +43,8 @@ const ProductCard = ({ product, order = 0 }: IProps) => {
 
   return (
     <div
-      className={styles.container}
+      className={`${styles.container} ${isVisibleCard && styles.visible_card}`}
+      ref={cardRef}
       style={{ animationDelay: `${order / 10}s` }}
     >
       <div className={styles.icons}>

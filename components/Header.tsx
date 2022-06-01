@@ -84,8 +84,10 @@ const Header = () => {
           </div>
           <Menu menu={menu} />
           <div className={styles.icons}>
-            <div>
-              <IoIosHeartEmpty size="27px" />
+            <div className={styles.favorites}>
+              <a href="/favorites">
+                <IoIosHeartEmpty size="27px" />
+              </a>
             </div>
             <div>
               <IoBagHandleOutline size="27px" />
