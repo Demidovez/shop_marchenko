@@ -4,7 +4,7 @@ import {
   AiFillCaretRight,
   AiFillCaretUp,
 } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IMenuItem } from "../types/types";
 
 interface IProps {
@@ -13,10 +13,21 @@ interface IProps {
 
 const Menu = ({ menu }: IProps) => {
   const [hoverCategory, setHoverCategory] = useState("");
+  const [isShowSubChildren, setIsShowSubChildren] = useState(false);
 
   const onHoverCategory = (category?: string) => {
     setHoverCategory(category || "");
   };
+
+  useEffect(() => {
+    const isShowSubChildren = menu.some((item) =>
+      item.children?.some(
+        (child) => hoverCategory === child.title && child.children
+      )
+    );
+
+    setIsShowSubChildren(isShowSubChildren);
+  }, [hoverCategory]);
 
   return (
     <ul className={styles.menu}>
@@ -27,7 +38,9 @@ const Menu = ({ menu }: IProps) => {
           </a>
           {item.children && (
             <div
-              className={styles.children_wrapper}
+              className={`${styles.children_wrapper} ${
+                isShowSubChildren && styles.disable_shadow
+              }`}
               onMouseLeave={onHoverCategory.bind(this, "")}
             >
               <div className={styles.children}>
@@ -56,7 +69,6 @@ const Menu = ({ menu }: IProps) => {
                   </p>
                 ))}
               </div>
-
               {item.children.map(
                 (child) =>
                   child.children && (

@@ -7,9 +7,12 @@ import { IoBagHandleOutline } from "react-icons/io5";
 import { useState } from "react";
 import { IMenuItem } from "../types/types";
 import Menu from "./Menu";
+import useScrollPosition from "../hooks/useScrollPosition";
 
 const Header = () => {
   const [height] = useState(75);
+
+  const scrollPosition = useScrollPosition();
 
   const [menu] = useState<IMenuItem[]>([
     {
@@ -72,7 +75,7 @@ const Header = () => {
     >
       <div
         className={styles.under_content}
-        style={{ marginBottom: `${-height}px` }}
+        style={{ marginBottom: `${-height}px`, top: `${-scrollPosition}px` }}
       ></div>
       <div className={styles.content_wrapper}>
         <div className={styles.content}>

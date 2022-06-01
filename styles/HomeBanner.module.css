@@ -25,6 +25,7 @@
   line-height: 1.55;
   font-weight: 400;
   text-transform: uppercase;
+  animation: fade_banner 2.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .link {
@@ -39,8 +40,31 @@
   line-height: 1.55;
   font-weight: 600;
   letter-spacing: 1px;
+  opacity: 0;
+  animation: fade_link 2s 0.3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
 }
 
 .banner img {
   background-size: cover;
+}
+
+@keyframes fade_banner {
+  0% {
+    transform: translateY(150px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fade_link {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }

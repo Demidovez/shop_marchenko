@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import useVisible from "../hooks/useVisible";
 import styles from "../styles/BestSellers.module.css";
 import { EProductOption, IProduct } from "../types/types";
 import ProductCard from "./ProductCard";
 
 const BestSellers = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
+
+  const linkRef = useRef(null);
+  const isVisibleLink = useVisible(linkRef);
 
   useEffect(() => {
     const products: IProduct[] = [
@@ -58,11 +62,15 @@ const BestSellers = () => {
     <div className={styles.container}>
       <h3>Бестселлеры</h3>
       <div className={styles.products}>
-        {products.map((product) => (
-          <ProductCard product={product} key={product.id} />
+        {products.map((product, index) => (
+          <ProductCard product={product} key={product.id} order={index} />
         ))}
       </div>
-      <a href="" className={styles.link}>
+      <a
+        href=""
+        className={`${styles.link} ${isVisibleLink && styles.visible_link}`}
+        ref={linkRef}
+      >
         Смотреть хиты обуви
       </a>
     </div>

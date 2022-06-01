@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import useVisible from "../hooks/useVisible";
 import styles from "../styles/PopularCategories.module.css";
 import { ICategory } from "../types/types";
 import CategoryCard from "./CategoryCard";
 
 const PopularCategories = () => {
   const [categories, setCategories] = useState<ICategory[]>([]);
+
+  const titleRef = useRef(null);
+  const isVisibleTitle = useVisible(titleRef);
 
   useEffect(() => {
     const categories: ICategory[] = [
@@ -35,7 +39,9 @@ const PopularCategories = () => {
 
   return (
     <div className={styles.container}>
-      <h3>Популярные категории</h3>
+      <h3 ref={titleRef} className={`${isVisibleTitle && styles.visible_h3}`}>
+        Популярные категории
+      </h3>
       <div className={styles.categories}>
         {categories.map((category) => (
           <CategoryCard category={category} key={category.id} />

@@ -6,9 +6,10 @@ import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 
 interface IProps {
   product: IProduct;
+  order?: number;
 }
 
-const ProductCard = ({ product }: IProps) => {
+const ProductCard = ({ product, order = 0 }: IProps) => {
   const [info, setInfo] = useState<string[]>([]);
   const [isFavorite, setIsFavorite] = useState(false);
   const [isBest, setIsBest] = useState(false);
@@ -37,7 +38,10 @@ const ProductCard = ({ product }: IProps) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ animationDelay: `${order / 10}s` }}
+    >
       <div className={styles.icons}>
         <div>{isBest && <div className={styles.best}>BEST</div>}</div>
         <div>
