@@ -8,14 +8,14 @@
   overflow-x: hidden;
   font-family: "Tenor sans", Arial, sans-serif;
   font-weight: 400;
-}
 
-.container > div {
-  position: absolute;
-  white-space: nowrap;
-  will-change: transform;
-  animation: marquee 50s linear infinite;
-  text-transform: uppercase;
+  & > div {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 50s linear infinite;
+    text-transform: uppercase;
+  }
 }
 
 @keyframes marquee {

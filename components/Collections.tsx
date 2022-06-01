@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ICollection } from "../types/types";
-import styles from "../styles/Collections.module.css";
+import styles from "../styles/Collections.module.scss";
 import { VscArrowRight } from "react-icons/vsc";
 import useVisible from "../hooks/useVisible";
 

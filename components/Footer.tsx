@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "../styles/Footer.module.css";
+import styles from "../styles/Footer.module.scss";
 import { ISocial, IPayment } from "../types/types";
 import Image from "next/image";
 import logo from "../public/assets/images/logo_white.png";

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import useVisible from "../hooks/useVisible";
-import styles from "../styles/AboutCompany.module.css";
+import styles from "../styles/AboutCompany.module.scss";
 
 const AboutCompany = () => {
   const titleRef = useRef(null);

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "../styles/MovingString.module.css";
+import styles from "../styles/MovingString.module.scss";
 
 const listTexts = ['Скидка 10% на первую покупку по промокоду "HELLO"'];
 

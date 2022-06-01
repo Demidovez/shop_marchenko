@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import useVisible from "../hooks/useVisible";
-import styles from "../styles/BestSellers.module.css";
+import styles from "../styles/BestSellers.module.scss";
 import { EProductOption, IProduct } from "../types/types";
 import ProductCard from "./ProductCard";
 

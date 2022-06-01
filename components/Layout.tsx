@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
-import styles from "../styles/Layout.module.css";
+import styles from "../styles/Layout.module.scss";
 import Scrollbar from "smooth-scrollbar";
 
 const Layout = ({ children }: any) => {

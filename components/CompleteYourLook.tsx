@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { EProductOption, IProduct } from "../types/types";
 import ProductCard from "./ProductCard";
-import styles from "../styles/CompleteYourLook.module.css";
+import styles from "../styles/CompleteYourLook.module.scss";
 import useVisible from "../hooks/useVisible";
 
 const CompleteYourLook = () => {

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import logo from "../public/assets/images/logo.png";
-import styles from "../styles/Header.module.css";
-import { AiFillCaretDown } from "react-icons/ai";
+import styles from "../styles/Header.module.scss";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoBagHandleOutline } from "react-icons/io5";
 import { useState } from "react";

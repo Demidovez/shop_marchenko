@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "../styles/CategoryCard.module.css";
+import styles from "../styles/CategoryCard.module.scss";
 import { ICategory } from "../types/types";
 import { VscArrowRight } from "react-icons/vsc";
 import { useRef } from "react";

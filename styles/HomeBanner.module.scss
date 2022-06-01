@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 530px;
+  overflow: hidden;
+  background: url("../public/assets/images/home_banner.jpeg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    h2 {
+      color: white;
+      font-size: 108px;
+      font-family: "Tenor sans", Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 400;
+      text-transform: uppercase;
+      animation: fade_banner 2.3s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .banner img {
+      background-size: cover;
+    }
+
+    .link {
+      padding: 18px 80px;
+      border: 1px solid white;
+      color: white;
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 0;
+      font-size: 16px;
+      font-family: "Tenor sans", Arial, sans-serif;
+      line-height: 1.55;
+      font-weight: 600;
+      letter-spacing: 1px;
+      opacity: 0;
+      animation: fade_link 2s 0.3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}
+
+@keyframes fade_banner {
+  0% {
+    transform: translateY(150px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fade_link {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

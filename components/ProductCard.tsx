@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import styles from "../styles/ProductCard.module.css";
+import styles from "../styles/ProductCard.module.scss";
 import { EProductOption, IProduct } from "../types/types";
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 import useVisible from "../hooks/useVisible";

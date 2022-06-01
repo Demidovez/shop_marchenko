@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import useVisible from "../hooks/useVisible";
-import styles from "../styles/PopularCategories.module.css";
+import styles from "../styles/PopularCategories.module.scss";
 import { ICategory } from "../types/types";
 import CategoryCard from "./CategoryCard";
 
