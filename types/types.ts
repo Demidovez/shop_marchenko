@@ -8,6 +8,8 @@ export interface IProduct {
   material?: string;
   seasons?: string[];
   images: string[];
+  color?: string;
+  sizes?: string[];
   options?: EProductOption[];
 }
 
@@ -56,7 +58,7 @@ export enum EOptionType {
 }
 
 export interface IFilterOption {
-  title: string;
+  name: string;
   type: EOptionType;
   children?: string[];
 }

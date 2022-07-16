@@ -1,12 +1,22 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/Filter.module.scss";
-import { EOptionType, ICategory, IFilterOption } from "../types/types";
-import { IoIosArrowDown, IoMdClose } from "react-icons/io";
+import {
+  EOptionType,
+  ICategory,
+  IFilterOption,
+  IProduct,
+} from "../types/types";
+import { IoMdClose } from "react-icons/io";
+import FilterOptions from "./FilterOptions";
 
-const Filter = () => {
+interface IProps {
+  products: IProduct[];
+}
+
+const Filter = ({ products }: IProps) => {
   const [categories, setCategories] = useState<ICategory[]>([]);
-  const [options, setOptions] = useState<IFilterOption[]>([]);
   const [tags, setTags] = useState<string[]>([]);
+  const [selectOptionCat, setSelectOptionCat] = useState("");
 
   useEffect(() => {
     const categories: ICategory[] = [
@@ -54,50 +64,6 @@ const Filter = () => {
 
     setCategories(categories);
 
-    const options: IFilterOption[] = [
-      {
-        title: "Материал",
-        type: EOptionType.SIMPLE_LIST,
-        children: ["Натуральная кожа", "Текстиль", "Экокожа"],
-      },
-      {
-        title: "Сезон",
-        type: EOptionType.SIMPLE_LIST,
-        children: ["Демисезонные", "Зима", "Лето"],
-      },
-      {
-        title: "Цвет",
-        type: EOptionType.CHECKBOX_LIST,
-        children: ["Светлый", "Хаки", "Черный"],
-      },
-      {
-        title: "Цена",
-        type: EOptionType.PRICE,
-      },
-      {
-        title: "Размер",
-        type: EOptionType.CHECKBOX_LIST,
-        children: [
-          "35",
-          "36",
-          "37",
-          "38",
-          "39",
-          "40",
-          "41",
-          "L",
-          "M",
-          "One size",
-          "S",
-          "XL",
-          "XS",
-          "XXL",
-        ],
-      },
-    ];
-
-    setOptions(options);
-
     const tags: string[] = ["Демисезонные", "Натуральная кожа", "> 2000"];
 
     setTags(tags);
@@ -111,14 +77,8 @@ const Filter = () => {
           <span key={category.id}>{category.title}</span>
         ))}
       </div>
-      <div className={styles.options}>
-        {options.map((option) => (
-          <span key={option.title}>
-            {option.title} <IoIosArrowDown />
-          </span>
-        ))}
-      </div>
-      <div className={styles.tags}>
+      <FilterOptions products={products} />
+      {/* <div className={styles.tags}>
         {tags.map((tag) => (
           <span key={tag}>
             <IoMdClose /> {tag}
@@ -128,7 +88,7 @@ const Filter = () => {
           <div className={styles.clear_all}>Очистить все</div>
         )}
       </div>
-      <p className={styles.count_found}>Найдено: 6</p>
+      <p className={styles.count_found}>Найдено: 6</p> */}
     </div>
   );
 };

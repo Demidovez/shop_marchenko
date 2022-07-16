@@ -26,7 +26,7 @@
     display: flex;
     justify-content: center;
 
-    span {
+    & > div {
       font-size: 12px;
       line-height: 1.55;
       text-transform: uppercase;
@@ -38,9 +38,17 @@
       font-weight: 400;
       display: flex;
       align-items: center;
+      justify-content: center;
+      position: relative;
 
-      &:hover {
-        opacity: 0.5;
+      span {
+        display: flex;
+        align-items: center;
+
+        &:hover,
+        &.active {
+          opacity: 0.5;
+        }
       }
 
       svg {
@@ -49,6 +57,39 @@
 
       &:last-child {
         margin-right: 0;
+      }
+
+      .option_children {
+        position: absolute;
+        background-color: white;
+        box-shadow: 0px 0px 8px -3px rgba(34, 60, 80, 0.4);
+        border-radius: 4px;
+        padding: 5px 0;
+        width: max-content;
+        min-width: 100px;
+        display: none;
+        flex-direction: column;
+        bottom: -8px;
+        transform: translateY(100%);
+        z-index: 1;
+
+        &.active {
+          display: flex;
+        }
+
+        div {
+          line-height: 1.2;
+          cursor: pointer;
+          padding: 5px 10px;
+          text-align: left;
+          font-family: "Tenor sans", Arial, sans-serif;
+          font-weight: 400;
+          text-transform: initial;
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+          }
+        }
       }
     }
   }

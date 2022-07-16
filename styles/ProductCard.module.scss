@@ -7,6 +7,10 @@
     animation: fadein 0.5s forwards;
   }
 
+  &:hover .images .image:last-child {
+    opacity: 0;
+  }
+
   .images {
     position: relative;
     width: 260px;
@@ -14,10 +18,6 @@
 
     .image {
       transition: all 0.3s;
-
-      &:hover {
-        opacity: 0;
-      }
     }
   }
 
